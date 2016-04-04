@@ -1,0 +1,102 @@
+/* Authors: Lok Sum Lo (n9050159), Thiline Widanagamage (n9185691) */
+/* CAB230 Wec Computing Assignment, April 2016 */
+
+
+/* This is only a template, CSS code will be changed */
+
+div.sidebox {
+} 
+
+
+body { 
+}
+
+
+#header { 
+    height: 80px;
+    text-align: center;
+    background-color: #003399;
+    color: white;
+}
+
+
+#header h1 {
+    margin: 0px;
+    padding: 10px;
+}
+
+#content {
+    padding: 10px;
+    margin-top: 5px;
+    margin-left: 5px;
+    margin-right: 200px;
+    border:1px solid black;
+    background-color: white;
+	white-space: pre;
+}
+
+#menu {
+	background-color: #003399;
+}
+
+#sidebar {    
+    margin: 5px;
+    border: 1px dashed black;
+    background-color: #CCCCFF;
+    float: right;
+    width: 180px;
+}
+
+#footer {
+    margin: 5px;
+    border: 1px dashed black;
+    background-color: #CCCCFF;
+    text-align: center;
+    clear: both;
+    height: 50px;
+}
+
+#menu a {
+    height: 40px;
+    padding-top: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    text-align: center;
+    font-size:12pt;
+    font-weight: bold;
+    background-color: #003399;
+    color: white;   
+    border-style: outset;
+    border-width: 4px;
+    text-decoration: none;
+}
+
+#menu a:hover {
+    background-color: blue;
+    text-decoration: underline;
+}
+
+/* the wrapper element is the outermost element and contains all the 
+ * other elements on the page.  The wrapper element is centred in the
+ * browser*/
+#wrapper {
+	box-shadow: 10px 10 px 5px #888888;
+    width: 810px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
