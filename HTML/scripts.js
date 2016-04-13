@@ -1,4 +1,19 @@
-function validate () {
+/* Functions related to resizable screens (incomplete)
+
+function showMenu() {
+	//window.alert("working");
+	document.getElementById("navMenu").style.display = "inline-block";
+}
+
+function hideMenu() {
+	document.getElementById("navMenu").style.display = "none";
+}
+
+function defaultMenu() {
+	window.alert("ok");
+} */
+
+/* function validate () {
 	
 	var validated = true;
 	
@@ -49,4 +64,4 @@ function checkPassword() {
 	else {
 		return false;
 	}
-}
+} */
