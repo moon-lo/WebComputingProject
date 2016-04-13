@@ -2,91 +2,228 @@
 /* CAB230 Wec Computing Assignment, April 2016 */
 
 
-/* This is only a template, CSS code will be changed */
-
-div.sidebox {
-} 
-
 
 body { 
+	background-image: url(images/background.png);
+	background-position: center 0%;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	margin-bottom: 30px;
+}
+
+.container {
+	width: 100%;
+	height: 100%;
+}
+
+.header-cont {
+	width: 100%;
+	top: 0px;
+	position: fixed;
+	height: 70px;
+	background-color: rgba(0, 0, 0, .5);
+}
+
+.header {
+	display: flex;
+	justify-content: space-between;
+}
+
+.header h1 { 
+/* 	display: flex;
+	justify-content: space-between; */
+	padding: 10px;
+	margin: 5px;
+	font-family: Helvetica, serif;
+	text-align: left;
+	color: white; 
+}
+
+.nav a {
+	display: inline-block;
+	align: right;
+	font-family: Helvetica, serif;
+	font-size: 110%;
+	color: white;
+	letter-spacing: 3px;
+	padding: 25px;
+	text-decoration: none
+}
+
+#mobileMenu {
+	display: none;
+	align: right;
+	font-family: Helvetica, serif;
+	font-size: 110%;
+	color: white;
+	letter-spacing: 3px;
+	padding: 25px;	
+}
+
+#mobileMenu:hover {
+	background-color: #05a991;
+	-webkit-transition: background-color 200ms linear;
+}
+
+.nav a:hover {
+	background-color: #05a991;
+	-webkit-transition: background-color 200ms linear;
 }
 
 
-#header { 
-    height: 80px;
-    text-align: center;
-    background-color: #003399;
-    color: white;
+.content {
+    margin-top: 100px;
+    margin-left: 50px;
+    margin-right: 50px;
+   /*  background-color: rgba(0, 0, 0, 0.3); */
+	height: auto;
+	padding-left: 20px;
+	color:white;
+	font-family: Helvetica, serif;
 }
 
-
-#header h1 {
-    margin: 0px;
-    padding: 10px;
+.home {
+	padding-top: 180px;
 }
 
-#content {
-    padding: 10px;
-    margin-top: 5px;
-    margin-left: 5px;
-    margin-right: 200px;
-    border:1px solid black;
-    background-color: white;
-	white-space: pre;
+.home h1 {
+	font-size: 500%;
+	line-height: 80%;
 }
 
-#menu {
-	background-color: #003399;
+#tagline {
+	position: relative;
+	bottom: 30px;
+	font-size: 120%;
+	font-family: cambria, georgia, helvetica;
+	/* font-style: italic; */
 }
 
-#sidebar {    
-    margin: 5px;
-    border: 1px dashed black;
-    background-color: #CCCCFF;
-    float: right;
-    width: 180px;
+#searchNow {
+	/* background-color: black; */
+	color: white;
+	font-size: 120%;
+	letter-spacing: 3px;
+	text-decoration: none;
+	border-radius: 15px;
+	border: 3px solid white;
+	padding: 25px 40px;
 }
 
-#footer {
-    margin: 5px;
-    border: 1px dashed black;
-    background-color: #CCCCFF;
-    text-align: center;
-    clear: both;
-    height: 50px;
+#searchNow:hover {
+	background-color: black;
+	border: 3px solid black;
+	-webkit-transition: background-color 200ms linear;
 }
 
-#menu a {
-    height: 40px;
-    padding-top: 10px;
-    padding-left: 15px;
-    padding-right: 15px;
-    text-align: center;
-    font-size:12pt;
-    font-weight: bold;
-    background-color: #003399;
-    color: white;   
-    border-style: outset;
-    border-width: 4px;
-    text-decoration: none;
+legend{
+	padding: 10px 15px;
+	border: 1px solid white;
+	font-family: helvetica, serif;
+	font-size: 150%;
+	letter-spacing: 3px;
+	font-weight: bold;
 }
 
-#menu a:hover {
-    background-color: blue;
-    text-decoration: underline;
+form ul {
+	list-style-type: none;
+	position: relative;
+	left: 280px;
 }
+
+li {
+	padding: 10px;
+	letter-spacing: 2px;
+	font-size: 110%;
+}
+
+form input {
+	position: relative;
+	left: 10px;
+}
+
+#submitReg {
+	background:none;
+	color: white;
+	border: 2px solid white;
+	padding: 20px;
+	margin: 15px 0px;
+	font-family: Helvetica, serif;
+	letter-spacing: 2px;
+	font-size: 110%;
+	position: relative;
+	left: 300px;
+}
+
+#submitReg:hover {
+	background: black;
+	border: 2px solid black;
+	-webkit-transition: background-color 200ms linear;
+}
+
+.footer {
+	font-family: Helvetica, serif;
+	font-size: 75%;
+    background-color: black;
+	position: fixed;
+    height: 25px;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+	margin-bottom: 0px;
+	padding-top: 15px;
+	text-align: right;
+}
+
+.footer a {
+	display: inline;
+	color: white;
+	padding: 15px;
+}
+
 
 /* the wrapper element is the outermost element and contains all the 
  * other elements on the page.  The wrapper element is centred in the
  * browser*/
-#wrapper {
-	box-shadow: 10px 10 px 5px #888888;
-    width: 810px;
+ 
+.wrapper {
+    width: 950px;
     margin-left: auto;
     margin-right: auto;
     text-align: left;
 }
 
+
+/* Resizeable for smaller screens  (incomplete) */
+
+/* @media screen and (max-width: 900px){
+	.nav {
+		margin-top: 70px;
+		float:right;
+		clear: both;
+		display: inline-block;
+	}
+	
+	.nav a {
+		width: 100%;
+		float: right;
+		clear: both;
+		background-color: black;
+		border: 1px solid white;
+		padding: 15px;
+		text-align: center;
+	}
+	
+	.header h1 {
+		font-size: 130%;
+		padding-top: 15px;
+		-webkit-transition: font-size 200ms linear
+	}
+	
+	#mobileMenu {
+		display: inline-block;
+	}
+} */
 
 
 
