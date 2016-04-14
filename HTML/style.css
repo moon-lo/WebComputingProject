@@ -142,6 +142,10 @@ form input {
 	left: 10px;
 }
 
+input[type="radio"] {
+  margin-right: 20px;
+}
+
 #submitReg {
 	background:none;
 	color: white;

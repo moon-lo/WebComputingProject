@@ -1,3 +1,16 @@
+function checkPassword(psw) {
+	//var p = document.getElementsById("psw").value;
+	/* var psw = document.getElementsByName("cpsw").value; */
+	if (psw.value != document.getElementsById("psw").value) {
+		window.alert("what");
+		input.setCustomValidity('Passwords do not match.');
+	} else {
+		input.setCustomValidity('');
+	}
+}
+
+
+
 /* Functions related to resizable screens (incomplete)
 
 function showMenu() {
