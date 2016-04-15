@@ -1,15 +1,52 @@
-function checkPassword(psw) {
+/*function checkPassword(psw) {
 	//var p = document.getElementsById("psw").value;
-	/* var psw = document.getElementsByName("cpsw").value; */
+	//var psw = document.getElementsByName("cpsw").value; 
 	if (psw.value != document.getElementsById("psw").value) {
 		window.alert("what");
 		input.setCustomValidity('Passwords do not match.');
 	} else {
 		input.setCustomValidity('');
 	}
+}*/
+
+function validate () {
+	
+	var validated = true;
+	
+	if (checkPassword()) {
+		document.forms["registration"]["cpsw"].setCustomValidity("Passwords must match.");
+		document.forms["registration"]["cpsw"].style.backgroundColor = "#ff9999";
+		document.forms["registration"]["cpsw"].focus();
+		validated = false;
+	}
+	
+	if (validated) {
+		window.alert("Form validated!");
+	}
+	
+	return validated;
+	
+}
+
+function checkPassword() {
+	var p = document.forms["registration"]["psw"].value;
+	var p2 = document.forms["registration"]["cpsw"].value;
+	
+	if (p == null || p == "" || p2 == null || p2 == "") {
+		return true;
+	}
+	else if (p  !== p2) {
+		return true;
+	}
+	else {
+		return false;
+	}
 }
 
 
+function hideError() {
+	document.forms["registration"]["cpsw"].style.backgroundColor = "white";
+}
 
 /* Functions related to resizable screens (incomplete)
 
