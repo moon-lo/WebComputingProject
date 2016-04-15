@@ -37,7 +37,7 @@
 					<h1>Search</h1>
 					<form>
 						<ul id="searchFormList">
-							<li>Park name:<input type="text" name="parkName"></li>
+							<li>Park name:<input type="text" pattern="[\ a-zA-Z0-9]*" name="parkName" title="Please only use letters (A-Z) and numbers (0-9)."></li>
 							<li>Suburb:
 							<select>
 								<option disabled selected value>Select a suburb</option>
@@ -136,7 +136,13 @@
 							</select>
 							</li>
 							<li>Rating:</li>
-						</ul>
+							<li>Park size: </br><input type="checkbox" name="small" value="small"><label>Small  (Less than 2000m&sup2;)</label></br>
+								<input type="checkbox" name="medium" value="med"><label>Medium  (2000m&sup2; to 6000m&sup2;)</label></br>
+								<input type="checkbox" name="large" value="large"><label>Large  (More than 6000m&sup2;)</label>
+							</li>
+							
+						</ul> <!-- searchFormList -->
+						<input type="submit" class="submitButton" value="SEARCH" id="submitSearch">
 					</form>
 				</div> <!-- content -->
 			</div> <!-- wrapper -->
