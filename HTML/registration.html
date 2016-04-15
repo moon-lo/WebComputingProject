@@ -38,8 +38,8 @@
 						<fieldset>
 							<legend>NEW USER</legend></br>
 							<ul>
-								<li>Username:</li><input type="text" name="username" required></br></br>
-								<li>Email address:</li><input type="email" name="email" required></br></br>
+								<li>Username:</li><input type="text" name="username" pattern="^[a-z0-9_-]{3,16}$" title="Username must be 3 to 16 characters long and may contain &#39-&#39 or &#39_&#39." required></br></br>
+								<li>Email address:</li><input type="email" name="email" pattern="^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$" title="Please enter a valid email address." required></br></br>
 								<li>Sex:</li><input type="radio" name="sex" value="male" checked>Male
 								<input type="radio" name="sex" value="female">Female</br></br>
 								<li>Phone:</li><input type="tel" pattern='^0[0-9]{9}' name="phone" title="Make sure the number begins with 0 and has 10 digits." required></br></br>

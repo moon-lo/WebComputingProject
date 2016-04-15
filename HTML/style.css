@@ -82,6 +82,10 @@ body {
 	font-family: Helvetica, serif;
 }
 
+.content h1 {
+	font-size: 300%;
+}
+
 .home {
 	padding-top: 180px;
 }
@@ -144,6 +148,18 @@ form input {
 
 input[type="radio"] {
   margin-right: 20px;
+}
+
+#searchFormList {
+	position: relative;
+	left: 0px;
+	padding: 10px;
+	margin: 10px;
+}
+
+#searchFormList input, select {
+	position: absolute;
+	left: 145px;
 }
 
 #submitReg {
