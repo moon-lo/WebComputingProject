@@ -38,6 +38,16 @@
 					<form>
 						<ul id="searchFormList">
 							<li>Park name:<input type="text" pattern="[\ a-zA-Z0-9]*" name="parkName" title="Please only use letters (A-Z) and numbers (0-9)."></li>
+
+							<li>Rating:
+							<select>
+							<option disabled selected value>Select a rating</option>
+								<option value=1>1/5</option>
+								<option value=2>2/5</option>
+								<option value=3>3/5</option>
+								<option value=4>4/5</option>
+								<option value=5>5/5</option>
+							</select>
 							<li>Suburb:
 							<select>
 								<option disabled selected value>Select a suburb</option>
@@ -144,6 +154,9 @@
 						<!-- <input type="submit" class="submitButton" value="SEARCH" id="submitSearch"> -->
 						<!-- PLACEHOLDER BUTTON: --> 
 						<a type="submit" class="submitButton" value="SEARCH" id="submitSearch" href="search_results.html" style="text-decoration:none;top:30px;">SEARCH</a>
+						<label id="orLabel">O R</label>
+						<a type="button" class="submitButton" value="LOCATION" id="submitLocation" onclick="getLocation()" style="text-decoration:none;top:30px;">SEARCH BY CURRENT LOCATION</a>
+
 					</form>
 				</div> <!-- content -->
 			</div> <!-- wrapper -->

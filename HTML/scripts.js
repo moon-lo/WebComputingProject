@@ -48,6 +48,30 @@ function hideError() {
 	document.forms["registration"]["cpsw"].style.backgroundColor = "white";
 }
 
+function getLocation() {
+ 	if (navigator.geolocation) {
+		navigator.geolocation.getCurrentPosition(showPosition); 
+	} 
+	else {
+		window.alert("Geolocation is not supported in this browser.");
+	} 
+}
+
+
+function showPosition(position) {
+	window.alert("Latitude: " + position.coords.latitude + " , " + "Longitude: " + position.coords.longitude); 
+}
+
+function showError(error) { 
+	window.alert(error);
+}
+
+
+
+
+
+
+
 /* Functions related to resizable screens (incomplete)
 
 function showMenu() {
