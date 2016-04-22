@@ -101,6 +101,11 @@ body {
 	left: 110px;
 }
 
+#submitLogin {
+	position: relative;
+	left: 355px;
+}
+
 /* Index page title text position */
 .home {
 	padding-top: 180px;
