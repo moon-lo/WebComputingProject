@@ -15,27 +15,15 @@
 	
 	<body>
 		<div class="container">
-			<div class="header-cont">
-				<div class="header">
-					<h1>DOG PARK SEARCHER</h1>
-					<!--<div class="mobile">
-						<a id="mobileMenu" onmouseover="showMenu()" onmouseout="hideMenu()">Menu</a>
-					</div>-->
-					<div class="nav" id="navMenu">
-						<a href="index.html">Home</a>
-						<a href="search.html">Search</a>
-						<a href="registration.html">Register</a>
-						<a href="login.html">Log in</a>
-					</div> <!-- nav -->
-				</div> <!-- header -->
-			</div> <!-- header-cont -->
+		
+			<?php include 'menu.inc' ?>
 			
 			<div class="wrapper">
 				<div class="content">
 					<div class="home">
 						<h1>Find a dog park</br>near you.</h1>
 						<p id="tagline">Looking for a dog park? You've come to the right place. Dog Park Searcher can find the nearest park for you and your canine friend.</p>
-						</br></br><a id="searchNow" href="search.html">SEARCH NOW</a>
+						</br></br><a id="searchNow" href="search.php">SEARCH NOW</a>
 					</div> <!-- home -->
 				</div> <!-- content -->
 			</div> <!-- wrapper -->

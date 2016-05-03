@@ -17,20 +17,8 @@
 	<!-- park details, user reviews and ratings -->
 
 		<div class="container">
-			<div class="header-cont">
-				<div class="header">
-					<h1>DOG PARK SEARCHER</h1>
-					<!--<div class="mobile">
-						<a id="mobileMenu" onmouseover="showMenu()" onmouseout="hideMenu()">Menu</a>
-					</div>-->
-					<div class="nav" id="navMenu">
-						<a href="index.html">Home</a>
-						<a href="search.html">Search</a>
-						<a href="registration.html">Register</a>
-						<a href="login.html">Log in</a>
-					</div> <!-- nav -->
-				</div> <!-- header -->
-			</div> <!-- header-cont -->
+			
+			<?php include 'menu.inc' ?>
 			
 			<div class="wrapper">
 				<div class="content">
