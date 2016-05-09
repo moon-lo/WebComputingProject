@@ -344,8 +344,18 @@ left: 50px;
 	position: relative;
 	display: inline;
 	left: 50px;
+	top: 30px;
 }
 
+.errorMessage {
+	color: red;
+	font-size: 130%;
+	letter-spacing: 1px;
+}
+
+.searchCriteria {
+	letter-spacing: 2px;
+}
 
 
 /* Resizeable for smaller screens  (incomplete) */

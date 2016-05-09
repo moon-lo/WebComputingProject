@@ -23,7 +23,15 @@
 			<div class="wrapper">
 				<div class="content">
 					<h1>Search Results</h1>
-					<div class="table">
+					
+					<?php displaySearchCriteria(); ?>
+					
+					<!-- Placeholder -->
+					<?php $parksList = array(); ?>
+					<?php displayParks($parksList); ?>
+					
+					
+					<!-- <div class="table">
 	                <table>
 	                    <tr id="headings">
 	                       <td>Park Name</td>
@@ -56,9 +64,9 @@
 	                        <td>Gordon Park</td>
 	                    </tr>
 	                </table>
-	            	</div>
+	            	</div>-->
 
-	            	<a class="submitButton" value="SEARCH" id="searchAgain" href="search.html" style="text-decoration:none;top:50px;">SEARCH AGAIN</a> 
+	            	<a class="submitButton" value="SEARCH" id="searchAgain" href="search.php" style="text-decoration:none;top:50px;">SEARCH AGAIN</a> 
 	            
 
 				</div> <!-- content -->

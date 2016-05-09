@@ -22,6 +22,7 @@
 			<div class="wrapper">
 				<div class="content">
 					<h1>Search</h1>
+					<p class="errorMessage">Please fill in at least one field to search for a park or use Geolocation service.</p>
 					<form id="searchForm" name="searchForm" action="searchResults.php" method="post">
 						<ul id="searchFormList">
 							<li>Park name:<input type="text" pattern="[\ a-zA-Z0-9]*" id="parkName" name="parkName" title="Please only use letters (A-Z) and numbers (0-9)."></li>
