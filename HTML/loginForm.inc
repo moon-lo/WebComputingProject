@@ -24,8 +24,8 @@
 						<fieldset>
 							<legend>LOG IN</legend></br>
 							<ul>
-								<li>Username:</li><input type="text" name="username" required></br></br>
-								<li>Password:</li><input type="password" name="psw" id="psw" required></br></br>
+								<li>Username:</li><input type="text" name="username" required><label class="errorMsgSmall"><?php if(isset($errors['username'])) echo $errors['username'] ?></label></br></br>
+								<li>Password:</li><input type="password" name="psw" id="psw" required><label class="errorMsgSmall"><?php if(isset($errors['psw'])) echo $errors['psw'] ?></label></br></br>
 							</ul>
 							<input type="submit" class="submitButton" value="LOG IN" id="submitLogin">
 						</fieldset>

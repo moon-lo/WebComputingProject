@@ -89,6 +89,10 @@ body {
 	font-size: 200%;
 }
 
+h2 {
+	letter-spacing: 2px;
+}
+
 #orLabel {
 	position: relative;
 	display: inline;
@@ -351,6 +355,13 @@ left: 50px;
 	color: red;
 	font-size: 130%;
 	letter-spacing: 1px;
+}
+
+.errorMsgSmall{
+	color: red;
+	font-size: 80%;
+	position: relative;
+	left: 30px;
 }
 
 .searchCriteria {

@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Log in - Dog Park Searcher</title>
+		<title>Home - Dog Park Searcher</title>
 		<meta charset="UTF-8"> 
 		<link href="style.css" rel="stylesheet" type="text/css"/>
 		<script type="text/javascript" src="scripts.js"></script>
@@ -15,21 +15,17 @@
 	
 	<body>
 		<div class="container">
-			
+		
 			<?php include 'menu.inc' ?>
 			
 			<div class="wrapper">
 				<div class="content">
-					<form name="login" id="login" action="loginValidate.php" method="post">
-						<fieldset>
-							<legend>LOG IN</legend></br>
-							<ul>
-								<li>Username:</li><input type="text" name="username" required></br></br>
-								<li>Password:</li><input type="password" name="psw" id="psw" required></br></br>
-							</ul>
-							<input type="submit" class="submitButton" value="LOG IN" id="submitLogin">
-						</fieldset>
-					</form>
+					<div class="home">
+						<?php if($loggedIn) echo "<h2>Welcome, $_POST[username].</h2>" ?>
+						<h1>Find a dog park</br>near you.</h1>
+						<p id="tagline">Looking for a dog park? You've come to the right place. Dog Park Searcher can find the nearest park for you and your canine friend.</p>
+						</br></br><a id="searchNow" href="search.php">SEARCH NOW</a>
+					</div> <!-- home -->
 				</div> <!-- content -->
 			</div> <!-- wrapper -->
 		 </div> <!-- container -->
