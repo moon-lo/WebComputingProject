@@ -1,4 +1,7 @@
 <?php
+	
+	include 'setup.inc';
+	
 
 	function checkEmpty($field_list) {
 	
@@ -10,10 +13,7 @@
 		if (!empty($field_list['rating'])){
 			$filled = true;
 		}
-		if (!empty($field_list['suburbs'])){
-			$filled = true;
-		}
-		if (!empty($field_list['parkSize'])){
+		if (!empty($field_list['suburb'])){
 			$filled = true;
 		}
 		
@@ -21,59 +21,40 @@
 	}
 	
 	function searchParks($field_list) {
-		$parks = array(1, 2, 3);
 		
-		if (!empty($field_list['parkName'])){
-			// If field is not empty, search for park and add to array
-			// getPark
+		$search_fields = array('parkName', 'rating', 'suburb');
+		$criteria = array();
+		$search_query = "SELECT ParkName, Street, Suburb FROM parks WHERE ";
+		
+		foreach($search_fields as $field){
+			if(!empty($field_list[$field])){
+				$criteria[] = "`$field` LIKE '%$field_list[$field]%'";
+			}
 		}
 		
-		if (!empty($field_list['rating'])){
-			// If field is not empty, search for park and add to array
-			// getPark
-		}
+		$search_query .= implode(' AND ', $criteria);
 		
-		if (!empty($field_list['suburbs'])){
-			// If field is not empty, search for park and add to array
-			// getPark
-		}
-		
-		if (!empty($field_list['parkSize'])){
-			// If field is not empty, search for park and add to array
-			// getPark
-		}
-		
-		// Checks to see if there are any valid results
-		$parks = array_filter($parks);
-		if (empty($parks)) {
-			include 'searchResultsNull.inc';
-		}
-		else {
-			
-			// Remove duplicate results from array
-			$GLOBALS['parks'] = array_unique($parks);
-			
-			// Display search results page and generate dynamic table for results
-			include 'searchResultsTrue.inc';
-			
-		}
-		
+		return $search_query;
 	}
 	
-	function getPark(&$parks, $key) {
-		// Search database for matching parks add to array
-	}
 	
-	function displayParks($parks) {
-		// Unsure of how the database will return the array yet, this is hard coded for now
+	function displayParks($result) {
 		
 		echo '<div class="table"><table>';
 		echo '<tr id="headings"><td>Park Name</td><td>Street Name</td><td>Suburb</td></tr>';
 		
-		// Loop here to generate dynamic table
-		
+		// Loop here to generate dynamic table DISPLAYS ALL PARKS
+		foreach ($result as $park){
+			$pName = formatString($park['ParkName']);
+			$pSt = formatString($park['Street']);
+			$pSub = formatString($park['Suburb']);
+			echo "<tr>";
+			echo "<td><a href=''>$pName</td>";
+			echo "<td>$pSt</td>";
+			echo "<td>$pSub</td>";
+			echo "</tr>";
+		}
 		echo '</table></div>';
-		
 		
 	}
 	
@@ -87,21 +68,19 @@
 		if (!empty($_POST['rating'])){
 			$mes_str .= "Rating: '$_POST[rating]/5' | ";
 		}
-		if (!empty($_POST['suburbs'])){
-			$mes_str .= "Suburb: '$_POST[suburbs]' | ";
-		}
-		if (!empty($_POST['parkSize'])){
-			$mes_str .= "Park size: ";
-			foreach ($_POST['parkSize'] as $val) {
-				$mes_str .= " $val";
-			}
+		if (!empty($_POST['suburb'])){
+			$mes_str .= "Suburb: '$_POST[suburb]' | ";
 		}
 		
 		$mes_str .= "</p>";
 		echo $mes_str;
 	}
 	
-	
+	function formatString($str){
+		$str = strtolower($str);
+		$str = ucwords($str);
+		return $str;
+	}
 	
 	
 	

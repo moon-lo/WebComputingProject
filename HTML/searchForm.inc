@@ -18,6 +18,7 @@
 	
 		<div class="container">
 			<?php include 'menu.inc' ?>
+			<?php include 'setup.inc'?>
 			
 			<div class="wrapper">
 				<div class="content">
@@ -37,13 +38,9 @@
 								<option value=5>5/5</option>
 							</select>
 							<li>Suburb:
-							<select id="suburbs" name="suburbs">
+							<select id="suburb" name="suburb">
 								<?php include 'suburbs.inc' ?>
 							</select>
-							</li>
-							<li>Park size: </br><input type="checkbox" name="parkSize[]" value="small"><label>Small  (Less than 2000m&sup2;)</label></br>
-								<input type="checkbox" name="parkSize[]" value="medium"><label>Medium  (2000m&sup2; to 6000m&sup2;)</label></br>
-								<input type="checkbox" name="parkSize[]" value="large"><label>Large  (More than 6000m&sup2;)</label>
 							</li>
 							
 						</ul> <!-- searchFormList -->

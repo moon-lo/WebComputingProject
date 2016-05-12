@@ -17,6 +17,7 @@
 		<div class="container">
 			
 			<?php include 'menu.inc' ?>
+			<?php include 'setup.inc'?>
 			
 			<div class="wrapper">
 				<div class="content">

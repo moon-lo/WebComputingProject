@@ -8,10 +8,9 @@
 	echo $_POST['suburbs'];
 	echo '<br/>';
 	
-	foreach ($_POST['parkSize'] as $val) {
-		echo $val;
-		echo '<br/>';
-	} */
+*/
+	
+	include 'setup.inc';
 	
 	require 'searchFunctions.inc';
 	
@@ -19,7 +18,21 @@
 	if (checkEmpty($_POST)){
 		
 		// Search for parks with matching criteria
-		searchParks($_POST);
+		$query = searchParks($_POST);
+		$rowNum = $pdo->prepare($query);
+		$rowNum->execute();
+		$results = $pdo->query($query);
+		
+		// Checks that the results are not empty
+		if ($rowNum->rowCount()==0){
+			include 'searchResultsNull.inc';
+		}
+		else {
+			include 'searchResultsTrue.inc';
+			//echo $rowNum->rowCount();
+			
+		}
+		
 	}
 	else {
 	
@@ -27,7 +40,19 @@
 		include 'searchForm.inc';
 	}
 	
-	
+		/* foreach($results as $park){
+		if(empty($park['ParkName']) || is_null($park['ParkName'])){
+			echo "empty name";
+		} else {
+			echo "not empty???";
+		} */
+		/* echo $park['ParkName'];
+		echo "</br>";
+		echo $park['Street'];
+		echo "</br>";
+		echo $park['Suburb'];
+		echo "</br>"; 
+	} */
 
 
 ?>

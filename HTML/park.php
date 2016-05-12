@@ -19,6 +19,7 @@
 		<div class="container">
 			
 			<?php include 'menu.inc' ?>
+			<?php include 'setup.inc'?>
 			
 			<div class="wrapper">
 				<div class="content">
@@ -28,7 +29,7 @@
 						<ul>
 							<li>Address: McCord Street, Gordon Park</li>
 							<li>Average Rating: 5/5</li>
-							<li>Park size: Medium (15714m&sup2;)
+							<li>Park size: Medium (15714m&sup2;)</li>
 						</ul>
 					</div> <!--park info -->
 					<br>

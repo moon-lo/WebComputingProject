@@ -19,6 +19,7 @@
 		<div class="container">
 			<?php include 'menu.inc' ?>
 			<?php require_once 'searchFunctions.inc' ?>
+			<?php include 'setup.inc'?>
 			
 			<div class="wrapper">
 				<div class="content">
