@@ -48,7 +48,7 @@
 						<!-- PLACEHOLDER BUTTON: --> 
 						<!--<a type="submit" class="submitButton" value="SEARCH" id="submitSearch" href="search_results.php" style="text-decoration:none;top:30px;">SEARCH</a>-->
 						<label id="orLabel">O R</label>
-						<a type="button" class="submitButton" value="LOCATION" id="submitLocation" onclick="getLocation()" style="text-decoration:none;top:30px;">SEARCH BY CURRENT LOCATION</a>
+						<a type="button" class="submitButton" value="LOCATION" id="submitLocation" onclick="getLocation()" action="location.php" style="text-decoration:none;top:30px;">SEARCH BY CURRENT LOCATION</a>
 
 					</form>
 				</div> <!-- content -->

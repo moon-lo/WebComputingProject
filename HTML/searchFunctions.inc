@@ -76,6 +76,11 @@
 		echo $mes_str;
 	}
 	
+	function displayLocation(){
+		$mes_str = "<p class=\"searchCriteria\">Results for parks near you ( Latitude: $_GET[lat] | Longitude: $_GET[lon] )";
+		echo $mes_str;
+	}
+	
 	function formatString($str){
 		$str = strtolower($str);
 		$str = ucwords($str);

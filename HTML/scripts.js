@@ -59,7 +59,7 @@ function getLocation() {
 
 
 function showPosition(position) {
-	window.alert("Latitude: " + position.coords.latitude + " , " + "Longitude: " + position.coords.longitude); 
+	window.location.href = "location.php?lat=" + position.coords.latitude + "&lon=" + position.coords.longitude;
 }
 
 function showError(error) { 
