@@ -31,9 +31,9 @@
 								<li>Sex:</li><input type="radio" name="sex" value="male" checked>Male
 								<input type="radio" name="sex" value="female">Female</br></br>
 								<li>Phone:</li><input type="tel" pattern='^0[0-9]{9}' name="phone" title="Make sure the number begins with 0 and has 10 digits." required></br></br>
-								<li>D.O.B:</li><input type="date" name="dob" min="1900-01-01" max="2016-04-22" required></br></br>
-								<li>Password:</li><input type="password" name="psw" id="psw" pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$" title="Enter a password with at least 8 digits containing numbers (0-9) and letters (A-Z)." required></br></br>
-								<li>Confirm password:</li><input type="password" name="cpsw" id="cpsw" pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$" oninput="hideError()" required></br></br>
+								<li>D.O.B:</li><input type="date" name="dob" min="1900-01-01" max="2016-05-30" required></br></br>
+								<li>Password:</li><input type="password" name="psw" id="psw" pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,15}$" title="Enter a password with 8-15 digits containing numbers (0-9) and letters (A-Z)." required></br></br>
+								<li>Confirm password:</li><input type="password" name="cpsw" id="cpsw" pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,15}$" oninput="hideError()" required></br></br>
 							</ul>
 							<input type="submit" class="submitButton" value="CREATE ACCOUNT" id="submitReg">
 						</fieldset>

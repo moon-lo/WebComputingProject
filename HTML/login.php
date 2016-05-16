@@ -25,8 +25,8 @@
 						<fieldset>
 							<legend>LOG IN</legend></br>
 							<ul>
-								<li>Username:</li><input type="text" name="username" required></br></br>
-								<li>Password:</li><input type="password" name="psw" id="psw" required></br></br>
+								<li>Username:</li><input type="text" name="username" pattern="^[a-zA-Z0-9_-]*$" required></br></br>
+								<li>Password:</li><input type="password" name="psw" id="psw" pattern="^[^\s]$" required></br></br>
 							</ul>
 							<input type="submit" class="submitButton" value="LOG IN" id="submitLogin">
 						</fieldset>

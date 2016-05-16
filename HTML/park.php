@@ -20,20 +20,17 @@
 			
 			<?php include 'menu.inc' ?>
 			<?php include 'setup.inc'?>
+			<?php include 'parkInfo.inc' ?>
+			
 			
 			<div class="wrapper">
 				<div class="content">
 				
-					<h1>Amelia Park</h1>
-					<div class="parkInfo">
-						<ul>
-							<li>Address: McCord Street, Gordon Park</li>
-							<li>Average Rating: 5/5</li>
-							<li>Park size: Medium (15714m&sup2;)</li>
-						</ul>
-					</div> <!--park info -->
+					<?php displayParkInfo($results); ?>
+					
 					<br>
 					<br>
+					
 					<h2>Reviews</h2>
 					<div class="userComments">
 						<div class="userCommentsInner">
@@ -43,6 +40,7 @@
 								<li>This park is great. It has a good amount of room. It features a variety of obstacles for my dog to try. The park wasn't overcrowded which was also a plus. Drinking fountains and litterbags are provided, as are bins, which is ulrta convenient!</li>
 							</ul>
 						</div>
+						
 						<div class="userCommentsInner">
 							<h3>@JeremyFoxton said on 22/04/2016:</h3>
 							<ul>
@@ -74,18 +72,6 @@
 				</form>		
 
 				</div> <!-- content -->
-
-
-
-
-
-
-
-
-
-
-
-
 			</div> <!-- wrapper -->
 		 </div> <!-- container -->
 		 

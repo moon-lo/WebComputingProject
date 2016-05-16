@@ -24,7 +24,7 @@
 		
 		$search_fields = array('parkName', 'rating', 'suburb');
 		$criteria = array();
-		$search_query = "SELECT ParkName, Street, Suburb FROM parks WHERE ";
+		$search_query = "SELECT ParkName, Street, Suburb, ParkID FROM parks WHERE ";
 		
 		foreach($search_fields as $field){
 			if(!empty($field_list[$field])){
@@ -48,8 +48,9 @@
 			$pName = formatString($park['ParkName']);
 			$pSt = formatString($park['Street']);
 			$pSub = formatString($park['Suburb']);
+			$pID = $park['ParkID'];
 			echo "<tr>";
-			echo "<td><a href=''>$pName</td>";
+			echo "<td><a href='park.php?ParkID=$pID'>$pName</td>";
 			echo "<td>$pSt</td>";
 			echo "<td>$pSub</td>";
 			echo "</tr>";
