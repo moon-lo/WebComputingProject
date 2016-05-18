@@ -15,14 +15,16 @@
 	
 	<body>
 		<div class="container">
-		
+			<?php include 'logoutFunctions.php' ?>
+			<?php logout(); ?>
 			<?php include 'menu.inc' ?>
-			<?php include 'loginFunctions.inc' ?>
+			
 			
 			<div class="wrapper">
 				<div class="content">
 					<div class="home">
-						<?php welcomeMessage(); ?>
+						
+						<h2>You are now logged out.</h2>
 						<h1>Find a dog park</br>near you.</h1>
 						<p id="tagline">Looking for a dog park? You've come to the right place. Dog Park Searcher can find the nearest park for you and your canine friend.</p>
 						</br></br><a id="searchNow" href="search.php">SEARCH NOW</a>

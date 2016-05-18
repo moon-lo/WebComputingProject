@@ -20,13 +20,13 @@
 			
 			<?php include 'menu.inc' ?>
 			<?php include 'setup.inc'?>
-			<?php include 'parkInfo.inc' ?>
+			<?php include 'parkInfo.php' ?>
 			
 			
 			<div class="wrapper">
 				<div class="content">
 				
-					<?php displayParkInfo($results); ?>
+					<?php displayParkInfo($results, $avg); ?>
 					
 					<br>
 					<br>
