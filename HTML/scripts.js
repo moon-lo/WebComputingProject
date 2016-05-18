@@ -20,9 +20,9 @@ function validate () {
 		validated = false;
 	}
 	
-	if (validated) {
+	/* if (validated) {
 		window.alert("Form validated!");
-	}
+	} */
 	
 	return validated;
 	

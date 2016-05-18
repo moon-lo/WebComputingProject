@@ -21,7 +21,7 @@
 			<div class="wrapper">
 				<div class="content">
 					<div class="home">
-						<?php if($loggedIn) echo "<h2>Welcome, $_POST[username].</h2>" ?>
+						<?php if($welcome) echo "<h2>Congratulations, your registration is complete and you can now log in.</h2>"; $welcome = false; ?>
 						<h1>Find a dog park</br>near you.</h1>
 						<p id="tagline">Looking for a dog park? You've come to the right place. Dog Park Searcher can find the nearest park for you and your canine friend.</p>
 						</br></br><a id="searchNow" href="search.php">SEARCH NOW</a>

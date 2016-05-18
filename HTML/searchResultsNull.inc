@@ -19,10 +19,13 @@
 		<div class="container">
 			<?php include 'menu.inc' ?>
 			<?php include 'setup.inc'?>
+			<?php require_once 'searchFunctions.inc' ?>
 			
 			<div class="wrapper">
 				<div class="content">
 					<h1>Search Results</h1>
+					
+					<?php displaySearchCriteria(); ?>
 					
 					<p class="errorMessage">Sorry, we can't find any parks matching your criteria.</p>
 

@@ -24,11 +24,21 @@
 		
 		$search_fields = array('parkName', 'rating', 'suburb');
 		$criteria = array();
-		$search_query = "SELECT ParkName, Street, Suburb, ParkID FROM parks WHERE ";
+		
+		if(empty($field_list['rating'])){
+			$search_query = "SELECT ParkName, Street, Suburb, ParkID FROM parks WHERE ";
+		}
+		else {
+			$search_query = "SELECT ParkName, Street, Suburb, Rating, parks.ParkID FROM parks, reviews WHERE ";
+		}
+		
 		
 		foreach($search_fields as $field){
-			if(!empty($field_list[$field])){
+			if(!empty($field_list[$field]) && $field !== 'rating'){
 				$criteria[] = "`$field` LIKE '%$field_list[$field]%'";
+			}
+			else if($field == 'rating' && !empty($field_list[$field])){
+				$criteria[] = "rating >= $field_list[$field] AND parks.ParkID = reviews.ParkID;";
 			}
 		}
 		

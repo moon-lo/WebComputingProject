@@ -22,7 +22,7 @@
 			
 			<div class="wrapper">
 				<div class="content">
-					<form name="registration" id="registration" onsubmit="return validate()">
+					<form name="registration" id="registration" onsubmit="return validate()" action="newUser.php" method="post">
 						<fieldset>
 							<legend>NEW USER</legend></br>
 							<ul>
