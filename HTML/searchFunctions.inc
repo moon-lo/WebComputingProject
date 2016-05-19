@@ -26,10 +26,10 @@
 		$criteria = array();
 		
 		if(empty($field_list['rating'])){
-			$search_query = "SELECT ParkName, Street, Suburb, ParkID FROM parks WHERE ";
+			$search_query = "SELECT ParkName, Street, Suburb, ParkID, Latitude, Longitude FROM parks WHERE ";
 		}
 		else {
-			$search_query = "SELECT ParkName, Street, Suburb, Rating, parks.ParkID FROM parks, reviews WHERE ";
+			$search_query = "SELECT ParkName, Street, Suburb, Rating, parks.ParkID, Latitude, Longitude FROM parks, reviews WHERE ";
 		}
 		
 		
@@ -66,6 +66,75 @@
 			echo "</tr>";
 		}
 		echo '</table></div>';
+	}
+	
+	function displayMap($results){
+		
+		$parkMarkers = array();
+		$markersFormated = '';
+		
+		foreach ($results as $park){
+			$name = formatString($park['ParkName']);
+			$element = array('name'=>"$name", 'lat'=>$park['Latitude'], 'lng'=>$park['Longitude'], 'id'=>$park['ParkID']);
+			$parkMarkers[] = $element;
+		}
+		
+		$i = 0;
+		
+		foreach($parkMarkers as $p){
+			$lat = $p['lat'];
+			$lng = $p['lng'];
+			$id = $p['id'];
+			$name = $p['name'];
+			
+			$markersFormated .= "
+			var coords_$i = {lat: $lat, lng: $lng};
+			var marker_$i = new google.maps.Marker({
+			  map: map,
+			  position: coords_$i,
+			  title: '$name'
+		    });
+			
+			var markerLabel_$i = '<a href=\"park.php?ParkID=$id\">$name</a>';
+			
+			var infowindow_$i = new google.maps.InfoWindow({
+				content: markerLabel_$i
+			});
+			
+			marker_$i.addListener('click', function() {
+				infowindow_$i.open(map, marker_$i);
+			});";
+			$i++;
+		}
+		$la = round($parkMarkers[0]['lat'], 4, PHP_ROUND_HALF_UP);
+		$lo = round($parkMarkers[0]['lng'], 4, PHP_ROUND_HALF_UP);
+		
+		echo "<script>
+		function initMap() {
+			var mycoords = {lat: $la, lng: $lo};
+			var map = new google.maps.Map(document.getElementById('mapSearch'), {
+			zoom: 12,
+			center: mycoords
+		});
+		$markersFormated
+		}</script>";
+		
+		echo "<script src='https://maps.googleapis.com/maps/api/js?key=AIzaSyBvUsbUSmkyhKNo4CfPWXtA26ytz3Qr01s&callback=initMap' async defer></script>";
+	
+		
+		/* echo "</br>";
+		echo count($parkMarkers);
+		
+		foreach($parkMarkers as $p){
+			echo $p['name'];
+			echo "</br>";
+			echo $p['lat'];
+			echo "</br>";
+			echo $p['lng'];
+			echo "</br>";
+			echo $p['id'];
+			echo "</br>";
+		} */
 		
 	}
 	

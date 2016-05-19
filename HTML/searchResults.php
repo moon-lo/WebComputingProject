@@ -13,6 +13,7 @@
 		$rowNum = $pdo->prepare($query);
 		$rowNum->execute();
 		$results = $pdo->query($query);
+		$maps = $pdo->query($query);
 		
 		// Checks that the results are not empty
 		if ($rowNum->rowCount()==0){

@@ -26,7 +26,8 @@
 					<h1>Search Results</h1>
 					
 					<?php displaySearchCriteria(); ?>
-					
+					<div id='mapSearch'></div>
+					<?php displayMap($maps) ?>
 					<?php displayParks($results); ?>
 
 	            	<a class="submitButton" value="SEARCH" id="searchAgain" href="search.php" style="text-decoration:none;top:50px;">SEARCH AGAIN</a> 

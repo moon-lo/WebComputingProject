@@ -20,12 +20,7 @@ function validate () {
 		validated = false;
 	}
 	
-	/* if (validated) {
-		window.alert("Form validated!");
-	} */
-	
 	return validated;
-	
 }
 
 function checkPassword() {
@@ -65,9 +60,6 @@ function showPosition(position) {
 function showError(error) { 
 	window.alert(error);
 }
-
-
-
 
 
 

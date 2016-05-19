@@ -8,7 +8,6 @@
 		<title>Dog park</title>
 		<meta charset="UTF-8"> 
 		<link href="style.css" rel="stylesheet" type="text/css"/>
-		<script type="text/javascript" src="scripts.js"></script>
 	</head>
 	
 

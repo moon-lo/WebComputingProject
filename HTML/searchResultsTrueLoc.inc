@@ -26,7 +26,8 @@
 					<h1>Search Results</h1>
 					
 					<?php displayLocation(); ?>
-					
+					<div id='mapSearch'></div>
+					<?php displayMap($maps) ?>
 					<?php displayParks($results); ?>
 					
 

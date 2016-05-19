@@ -368,6 +368,22 @@ left: 50px;
 	letter-spacing: 2px;
 }
 
+#map {
+	height: 400px;
+	width: 600px;
+	position: relative;
+	left: 100px;
+	color: black;
+}
+
+#mapSearch {
+	height: 400px;
+	width: 600px;
+	position: relative;
+	left: 100px;
+	color: black;
+}
+
 
 /* Resizeable for smaller screens  (incomplete) */
 
