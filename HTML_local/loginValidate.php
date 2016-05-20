@@ -12,7 +12,7 @@
 			$_SESSION['isLoggedin'] = true;
 			$_SESSION['userID'] = $userInfo[0];
 			$_SESSION['username'] = $userInfo[1];
-			header("Location: http://{$_SERVER['HTTP_HOST']}/n9050159/HTML/index.php");
+			header("Location: http://{$_SERVER['HTTP_HOST']}/Week7/HTML/index.php");
 		}
 	}
 	else {

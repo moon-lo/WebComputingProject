@@ -9,13 +9,7 @@
 	$query_rating = "SELECT AVG(rating) FROM reviews WHERE ParkID = $parkID";
 	
 	$results = $pdo->query($query);
-	$micro = $pdo->query($query);
 	$avg = $pdo->query($query_rating);
-	
-	
-	function microDataPlace($micro){
-		
-	}
 	
 	
 	function displayParkInfo($results, $avg){

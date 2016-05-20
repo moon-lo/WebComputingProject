@@ -1,6 +1,6 @@
 <?php
 	try {
-		$pdo = new PDO('mysql:host=localhost;dbname=n9050159', 'n9050159', 'n905015-');
+		$pdo = new PDO('mysql:host=localhost;dbname=dogparkdb', 'root', 'mammies123');
 		$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		$result = $pdo->query('SELECT ParkName, Street, Suburb FROM parks');
 	}

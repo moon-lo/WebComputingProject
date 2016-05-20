@@ -12,23 +12,18 @@
 		$query = searchParks($_POST);
 		$rowNum = $pdo->prepare($query);
 		$rowNum->execute();
-		
+		$results = $pdo->query($query);
+		$maps = $pdo->query($query);
 		
 		// Checks that the results are not empty
 		if ($rowNum->rowCount()==0){
 			include 'searchResultsNull.inc';
 		}
 		else {
-			$rowNum->closeCursor();
-			$result = $pdo->query($query);
-			$results = $result->fetchAll(PDO::FETCH_ASSOC);
-			$result->closeCursor();
-			$maps = $pdo->query($query);
 			include 'searchResultsTrue.inc';
 			//echo $rowNum->rowCount();
 			
 		}
-		
 	}
 	else {
 	
