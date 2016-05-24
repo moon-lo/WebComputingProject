@@ -14,7 +14,32 @@
 	
 	
 	function microDataPlace($micro){
+		foreach ($micro as $data){
+			$name = formatString($data['ParkName']);
+			$lat = $data['Latitude'];
+			$lng = $data['Longitude'];
+			$street = formatString($data['Street']);
+		}
 		
+		echo "
+		<script type=\"application/ld+json\">{
+		  \"@context\": \"http://fastapps04.qut.edu.au:8080/n9050159/HTML/index.php\",
+		  \"@type\": \"Place\",
+		  \"geo\": {
+			\"@type\": \"GeoCoordinates\",
+			\"latitude\": \"$lat\",
+			\"longitude\": \"$lng\"
+		  },
+		  \"name\": \"$name\",
+		  \"address\": {
+			  \"@type\": \"PostalAddress\",
+			  \"addressLocality\": \"Brisbane\",
+			  \"addressRegion\": \"QLD\",
+			  \"streetAddress\": \"$street\"
+		  },
+		  \"url\": \"http://fastapps04.qut.edu.au:8080/n9050159/HTML/park.php?ParkID=$_GET[ParkID]\"
+		}</script>
+		";
 	}
 	
 	

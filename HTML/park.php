@@ -26,6 +26,7 @@
 				<div class="content">
 				
 					<?php displayParkInfo($results, $avg); ?>
+					<?php microDataPlace($micro); ?>
 					
 					<br>
 					<br>
