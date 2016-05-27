@@ -1,6 +1,7 @@
-<!--  Authors: Lok Sum Lo (n9050159), Thiline Widanagamage (n9185691) -->
+<!--  Authors: Lok Sum Lo (n9050159) -->
 <!--  CAB230 Wec Computing Assignment, April 2016 -->
 
+<!-- This is the index page, which welcomes the user to the site -->
 
 <!DOCTYPE html>
 <html>
@@ -11,17 +12,14 @@
 		<script type="text/javascript" src="scripts.js"></script>
 	</head>
 	
-	<!-- search results in a tabular format, links to individual item's page -->
-	
 	<body>
 		<div class="container">
-		
 			<?php include 'menu.inc' ?>
 			<?php include 'loginFunctions.inc' ?>
-			
 			<div class="wrapper">
 				<div class="content">
 					<div class="home">
+						<!-- Welcomes user by their username if they are logged in -->
 						<?php welcomeMessage(); ?>
 						<h1>Find a dog park</br>near you.</h1>
 						<p id="tagline">Looking for a dog park? You've come to the right place. Dog Park Searcher can find the nearest park for you and your canine friend.</p>

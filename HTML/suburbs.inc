@@ -1,5 +1,7 @@
+<!-- List of suburbs for the dropdown menu in search page -->
+
 <option disabled selected value>Select a suburb</option>
-<option value="AcaciaRidge">Acacia Ridge</option>
+<option value="Acacia Ridge">Acacia Ridge</option>
 <option value="Albion">Albion</option>
 <option value="Alderley">Alderley</option>
 <option value="Algester">Algester</option>

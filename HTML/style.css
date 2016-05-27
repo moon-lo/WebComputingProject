@@ -11,13 +11,11 @@ body {
 	margin-bottom: 30px;
 }
 
-
 /* Container for entire html document */
 .container {
 	width: 100%;
 	height: 100%;
 }
-
 
 /* Container for header area - including site title and menu */
 .header-cont {
@@ -28,13 +26,11 @@ body {
 	background-color: rgba(0, 0, 0, .5);
 }
 
-
 /* Modifies header elements spacing - title and menu buttons */
 .header {
 	display: flex;
 	justify-content: space-between;
 }
-
 
 /* Site title text */
 .header h1 { 
@@ -44,7 +40,6 @@ body {
 	text-align: left;
 	color: white; 
 }
-
 
 /* Menu buttons configuration */
 .nav a {
@@ -58,13 +53,11 @@ body {
 	text-decoration: none
 }
 
-
 /* Hover effect over menu buttons */
 .nav a:hover {
 	background-color: #05a991;
 	-webkit-transition: background-color 200ms linear;
 }
-
 
 /* Main area for displaying individual page content */
 .content {
@@ -79,7 +72,6 @@ body {
 	padding-bottom: 100px;
 }
 
-
 /* Page title */
 .content h1 {
 	font-size: 300%;
@@ -89,10 +81,17 @@ body {
 	font-size: 200%;
 }
 
+/* Non-title page header */
 h2 {
 	letter-spacing: 2px;
 }
 
+h3 {
+	position: relative;
+	left: 30px;
+}
+
+/* Label in search page */
 #orLabel {
 	position: relative;
 	display: inline;
@@ -100,11 +99,13 @@ h2 {
 	left: 80px;
 }
 
+/* Submit button for geolocation search */
 #submitLocation {
 	position: relative;
 	left: 110px;
 }
 
+/* Login button on login page */
 #submitLogin {
 	position: relative;
 	left: 355px;
@@ -115,13 +116,11 @@ h2 {
 	padding-top: 180px;
 }
 
-
 /* Index page title text */
 .home h1 {
 	font-size: 500%;
 	line-height: 80%;
 }
-
 
 /* Index page tagline */
 #tagline {
@@ -131,7 +130,6 @@ h2 {
 	font-family: cambria, georgia, helvetica;
 	/* font-style: italic; */
 }
-
 
 /* Index page search button */
 #searchNow {
@@ -144,14 +142,12 @@ h2 {
 	padding: 25px 40px;
 }
 
-
 /* Index page search button hover effect */
 #searchNow:hover {
 	background-color: black;
 	border: 3px solid black;
 	-webkit-transition: background-color 200ms linear;
 }
-
 
 /* Legend aesthetics for registration form */
 legend{
@@ -163,7 +159,6 @@ legend{
 	font-weight: bold;
 }
 
-
 /* User input form positioning */
 form ul {
 	list-style-type: none;
@@ -171,14 +166,12 @@ form ul {
 	left: 280px;
 }
 
-
 /* User input form items */
 li {
 	padding: 10px;
 	letter-spacing: 2px;
 	font-size: 110%;
 }
-
 
 /* User input - input fields */
 form input {
@@ -262,7 +255,6 @@ input[type="radio"] {
 	padding: 15px;
 }
 
-
 /* Wrapper centres the content of the site - includes body of html */
 .wrapper {
     width: 950px;
@@ -271,8 +263,7 @@ input[type="radio"] {
     text-align: left;
 }
 
-
-
+/* Table for search results */
 table {
     border-collapse: collapse;
     width: 100%;
@@ -282,6 +273,7 @@ table {
 	color: #ffffff;
 }
 
+/* Table headings */
 #headings {
 	font-size: 30px;
 	font-family: Arial;
@@ -301,17 +293,19 @@ table a {
 
 tr:nth-child(even) {background-color: rgba(0, 0, 0, .5)}
 
-
+/* Park info on individual park pages */
 .parkInfo ul {
 	list-style-type: none;
 }
 
+/* Park reviews box */
 .userComments {
 	font-size: 90%;
 	position: relative;
 	left: 50px;
 }
 
+/* Invidivual user review section */
 .userCommentsInner {
 	background-color: rgba(0, 0, 0, .5);
 	margin: 20px 0px 20px 0px;
@@ -333,17 +327,19 @@ tr:nth-child(even) {background-color: rgba(0, 0, 0, .5)}
 	text-decoration: underline;
 }
 
-
+/* User review text area */
 textarea {
-position: relative;
-left: 50px;
+	position: relative;
+	left: 50px;
 }
 
+/* Review submission button */
 #submitComment {
 	position: relative;
 	left:650px;
 }
 
+/* Search button */
 #submitSearch {
 	position: relative;
 	display: inline;
@@ -351,12 +347,14 @@ left: 50px;
 	top: 30px;
 }
 
+/* General error message */
 .errorMessage {
 	color: red;
 	font-size: 130%;
 	letter-spacing: 1px;
 }
 
+/* Small error message for input fields */
 .errorMsgSmall{
 	color: red;
 	font-size: 80%;
@@ -364,10 +362,21 @@ left: 50px;
 	left: 30px;
 }
 
+/* Error for login page */
+.errorLogin {
+	color: red;
+	font-size: 130%;
+	letter-spacing: 1px;
+	position: relative;
+	left: 25%;
+}
+
+/* Search criteria on search results page */
 .searchCriteria {
 	letter-spacing: 2px;
 }
 
+/* Google map in individual park page */
 #map {
 	height: 400px;
 	width: 600px;
@@ -376,6 +385,7 @@ left: 50px;
 	color: black;
 }
 
+/* Google map in search page */
 #mapSearch {
 	height: 400px;
 	width: 600px;
@@ -385,8 +395,7 @@ left: 50px;
 }
 
 
-/* Resizeable for smaller screens  (incomplete) */
-
+/* Resizeable for mobile screens (scrapped) */
 /* 
 	#mobileMenu {
 		display: none;

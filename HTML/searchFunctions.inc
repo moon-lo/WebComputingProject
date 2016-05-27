@@ -1,12 +1,12 @@
 <?php
-	
-	include 'setup.inc';
-	
+/* Authors: Lok Sum Lo (n9050159) 
+CAB230 Wec Computing Assignment, May 2016 */
 
+	include 'setup.inc';
+
+	// Checks that search input fields are not empty
 	function checkEmpty($field_list) {
-	
 		$filled = false; 
-		
 		if (!empty($field_list['parkName'])){
 			$filled = true;
 		}
@@ -16,10 +16,11 @@
 		if (!empty($field_list['suburb'])){
 			$filled = true;
 		}
-		
 		return $filled;	
 	}
 	
+	
+	// Returns a SQL query depending on which criterias the user wants to search a park with
 	function searchParks($field_list) {
 		
 		$search_fields = array('parkName', 'rating', 'suburb');
@@ -32,24 +33,21 @@
 			$search_query = "SELECT ParkName, Street, Suburb, Rating, parks.ParkID, Latitude, Longitude FROM parks, reviews WHERE ";
 		}
 		
-		
 		foreach($search_fields as $field){
 			if(!empty($field_list[$field]) && $field !== 'rating'){
 				$criteria[] = "`$field` LIKE '%$field_list[$field]%'";
 			}
 			else if($field == 'rating' && !empty($field_list[$field])){
-				$criteria[] = "rating >= $field_list[$field] AND parks.ParkID = reviews.ParkID;";
+				$criteria[] = "rating >= $field_list[$field] AND parks.ParkID = reviews.ParkID";
 			}
 		}
 		
 		$search_query .= implode(' AND ', $criteria);
-		
 		return $search_query;
 	}
 	
-	
+	// Displays the list of parks returned from the search in a tabular format
 	function displayParks($result) {
-		
 		echo '<div class="table"><table>';
 		echo '<tr id="headings"><td>Park Name</td><td>Street Name</td><td>Suburb</td></tr>';
 		
@@ -68,19 +66,20 @@
 		echo '</table></div>';
 	}
 	
-	function displayMap($results){
-		
+	// Displays google map of the search results with pins on each park
+	function displayMap($results){	
 		$parkMarkers = array();
 		$markersFormated = '';
 		
+		// Make an array for all parks for making individual markers in the map
 		foreach ($results as $park){
 			$name = formatString($park['ParkName']);
 			$element = array('name'=>"$name", 'lat'=>$park['Latitude'], 'lng'=>$park['Longitude'], 'id'=>$park['ParkID']);
 			$parkMarkers[] = $element;
 		}
 		
+		// Loop through array to implement each marker on the map
 		$i = 0;
-		
 		foreach($parkMarkers as $p){
 			$lat = $p['lat'];
 			$lng = $p['lng'];
@@ -106,9 +105,12 @@
 			});";
 			$i++;
 		}
+		
+		// Round off coordinates
 		$la = round($parkMarkers[0]['lat'], 4, PHP_ROUND_HALF_UP);
 		$lo = round($parkMarkers[0]['lng'], 4, PHP_ROUND_HALF_UP);
 		
+		// Echo the javascript coding for making the map
 		echo "<script>
 		function initMap() {
 			var mycoords = {lat: $la, lng: $lo};
@@ -120,26 +122,10 @@
 		}</script>";
 		
 		echo "<script src='https://maps.googleapis.com/maps/api/js?key=AIzaSyBvUsbUSmkyhKNo4CfPWXtA26ytz3Qr01s&callback=initMap' async defer></script>";
-	
-		
-		/* echo "</br>";
-		echo count($parkMarkers);
-		
-		foreach($parkMarkers as $p){
-			echo $p['name'];
-			echo "</br>";
-			echo $p['lat'];
-			echo "</br>";
-			echo $p['lng'];
-			echo "</br>";
-			echo $p['id'];
-			echo "</br>";
-		} */
-		
 	}
 	
+	// Displays all the user search criterias on the search result page
 	function displaySearchCriteria() {
-	
 		$mes_str = "<p class=\"searchCriteria\">Results for ";
 	
 		if (!empty($_POST['parkName'])){
@@ -156,22 +142,18 @@
 		echo $mes_str;
 	}
 	
+	// Displays user geolocation on the search result page
 	function displayLocation(){
-		$mes_str = "<p class=\"searchCriteria\">Results for parks near you ( Latitude: $_GET[lat] | Longitude: $_GET[lon] )";
+		$lat = round($_GET['lat'], 3, PHP_ROUND_HALF_EVEN);
+		$lon = round($_GET['lon'], 3, PHP_ROUND_HALF_EVEN);
+		$mes_str = "<p class=\"searchCriteria\">Results for parks near you within 3km ( Latitude: $lat | Longitude: $lon )";
 		echo $mes_str;
 	}
 	
+	// Converts a string into 'This Kind Of Format'
 	function formatString($str){
 		$str = strtolower($str);
 		$str = ucwords($str);
 		return $str;
-	}
-	
-	
-	
-	
-	
-	
-	
-	
+	}	
 ?>

@@ -1,19 +1,48 @@
 <?php
+/* Authors: Lok Sum Lo (n9050159) 
+CAB230 Wec Computing Assignment, May 2016  */
+
+	// All functions required to display the individual park pages are stored in this file
 
 	include 'setup.inc';
 	include 'searchFunctions.inc';
 	
 	$parkID = $_GET['ParkID'];
 	
+	// Queries are made for different sessions of the page, returning information of the selected park
 	$query = "SELECT ParkName, Street, Suburb, DogParkName, DogParkArea, Latitude, Longitude FROM parks WHERE ParkID = $parkID";
 	$query_rating = "SELECT AVG(rating) FROM reviews WHERE ParkID = $parkID";
+	$query_rev = "SELECT Rating, Content, ReviewDate, Username FROM reviews WHERE ParkID = $parkID";
+	$query_micro = $query_rev;
 	
 	$results = $pdo->query($query);
 	$micro = $pdo->query($query);
 	$avg = $pdo->query($query_rating);
+	$reviews = $pdo->query($query_rev);
+	$rev_micro = $pdo->query($query_micro);
 	
+	// Displays all existing reviews on the page
+	function displayReviews($reviews){
+		if ($reviews->rowCount()==0){
+			echo "<h3>No reviews submitted yet.</h3>";
+		}
+		else{
+			echo '<div class="userComments">';
+			foreach ($reviews as $review){
+				echo '<div class="userCommentsInner">';
+				echo "<h3>$review[Username] said on $review[ReviewDate]</h3>";
+				echo "<ul>";
+				echo "<li><b>Rating: $review[Rating]/5</b></li>";
+				echo "<li>$review[Content]</li>";
+				echo "</ul>";
+				echo '</div>';
+			}
+			echo '</div>';
+		}
+	}
 	
-	function microDataPlace($micro){
+	// Adds microdata about the park and reviews by using json
+	function microData($micro, $reviews){
 		foreach ($micro as $data){
 			$name = formatString($data['ParkName']);
 			$lat = $data['Latitude'];
@@ -23,7 +52,7 @@
 		
 		echo "
 		<script type=\"application/ld+json\">{
-		  \"@context\": \"http://fastapps04.qut.edu.au:8080/n9050159/HTML/index.php\",
+		  \"@context\": \"http://www.schema.org/\",
 		  \"@type\": \"Place\",
 		  \"geo\": {
 			\"@type\": \"GeoCoordinates\",
@@ -37,12 +66,32 @@
 			  \"addressRegion\": \"QLD\",
 			  \"streetAddress\": \"$street\"
 		  },
-		  \"url\": \"http://fastapps04.qut.edu.au:8080/n9050159/HTML/park.php?ParkID=$_GET[ParkID]\"
-		}</script>
-		";
+		  \"url\": \"http://fastapps04.qut.edu.au:8080/n9050159/HTML/park.php?ParkID=$_GET[ParkID]\",";
+		  
+		echo "\"review\": [";
+		  
+		foreach ($reviews as $review){
+			echo "
+			{
+			  \"@type\": \"Review\",
+			  \"author\": \"$review[Username]\",
+			  \"datePublished\": \"$review[ReviewDate]\",
+			  \"description\": \"$review[Content]\",
+			  \"name\": \"$name Review\",
+			  \"reviewRating\": {
+				\"@type\": \"Rating\",
+				\"bestRating\": \"5\",
+				\"ratingValue\": \"$review[Rating]\",
+				\"worstRating\": \"1\"
+			  }
+			},
+			";
+		}
+		
+		echo "]}</script>";
 	}
 	
-	
+	// Displays park name, address, park size, average rating and google map for selected park
 	function displayParkInfo($results, $avg){
 		foreach ($results as $park){
 			$pName = formatString($park['ParkName']);

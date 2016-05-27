@@ -1,4 +1,4 @@
-<!--  Authors: Lok Sum Lo (n9050159), Thiline Widanagamage (n9185691) -->
+<!--  Authors: Lok Sum Lo (n9050159) -->
 <!--  CAB230 Wec Computing Assignment, April 2016 -->
 
 
@@ -14,7 +14,7 @@
 
 	<body>
 	
-	<!-- email, name, password -->
+	<!-- Displays registration page as well as errors for fields which did not pass the validations -->
 	
 		<div class="container">
 			<?php include 'menu.inc' ?>

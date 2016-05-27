@@ -60,7 +60,6 @@
 	            	</div>
 
 	            	<a class="submitButton" value="SEARCH" id="searchAgain" href="search.html" style="text-decoration:none;top:50px;">SEARCH AGAIN</a> 
-	            
 
 				</div> <!-- content -->
 			</div> <!-- wrapper -->

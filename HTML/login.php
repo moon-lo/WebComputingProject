@@ -1,4 +1,4 @@
-<!--  Authors: Lok Sum Lo (n9050159), Thiline Widanagamage (n9185691) -->
+<!--  Authors: Lok Sum Lo (n9050159) -->
 <!--  CAB230 Wec Computing Assignment, April 2016 -->
 
 
@@ -11,7 +11,7 @@
 		<script type="text/javascript" src="scripts.js"></script>
 	</head>
 	
-	<!-- search results in a tabular format, links to individual item's page -->
+	<!-- This page allows users to login with a form consisting Username and Passowrd input fields -->
 	
 	<body>
 		<div class="container">

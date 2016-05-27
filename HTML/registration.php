@@ -1,5 +1,5 @@
-<!--  Authors: Lok Sum Lo (n9050159), Thiline Widanagamage (n9185691) -->
-<!--  CAB230 Wec Computing Assignment, April 2016 -->
+<!--  Authors: Lok Sum Lo (n9050159) -->
+<!--  CAB230 Wec Computing Assignment, May 2016 -->
 
 
 <!DOCTYPE html>
@@ -10,11 +10,10 @@
 		<link href="style.css" rel="stylesheet" type="text/css"/>
 		<script type="text/javascript" src="scripts.js"></script>
 	</head>
-	
 
 	<body>
 	
-	<!-- email, name, password -->
+	<!-- Registration page for new users, includes registration form -->
 	
 		<div class="container">
 			<?php include 'menu.inc' ?>

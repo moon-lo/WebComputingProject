@@ -1,5 +1,9 @@
-<html>
+/* Authors: Lok Sum Lo (n9050159) 
+CAB230 Wec Computing Assignment, May 2016  */
+
 <?php
+	
+	/* This code returns a list of parks from the database according to the user's coordinates */
 	
 	include 'setup.inc';
 	
@@ -13,4 +17,3 @@
 	include 'searchResultsTrueLoc.inc';
 	
 ?>
-</html>

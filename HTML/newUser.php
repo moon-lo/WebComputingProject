@@ -1,10 +1,15 @@
 <?php
+/* Authors: Lok Sum Lo (n9050159) 
+CAB230 Wec Computing Assignment, May 2016  */
+
+// This code creates a new row in the users table for registering a new user
 
 	include 'setup.inc';
 	include 'validateFunctions.inc';
 	
 	$errors = array();
 	
+	// After inputs are validated, data is inserted into the users table with a prepare statement
 	if(validateRegistration($errors, $_POST, $pdo)){
 		$stmt = $pdo->prepare('INSERT INTO users (Username, Email, DOB, Sex, Phone, Password, Salt) VALUES (:username, :email, :dob, :sex, :phone, sha2(CONCAT(:psw, :salt), 0), :salt)');
 
@@ -20,10 +25,12 @@
 		$stmt->execute();
 
 		$welcome = true;
-
+		
+		// Displays registration successful message
 		include 'index.inc';
 	} 
 	else {
+		// Displays errors on registration form
 		include 'registrationForm.inc';
 	}
 

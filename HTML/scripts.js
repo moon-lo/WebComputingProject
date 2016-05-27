@@ -1,28 +1,41 @@
-/*function checkPassword(psw) {
-	//var p = document.getElementsById("psw").value;
-	//var psw = document.getElementsByName("cpsw").value; 
-	if (psw.value != document.getElementsById("psw").value) {
-		window.alert("what");
-		input.setCustomValidity('Passwords do not match.');
-	} else {
-		input.setCustomValidity('');
-	}
-}*/
+/* Authors: Lok Sum Lo (n9050159) 
+CAB230 Wec Computing Assignment, May 2016 */
 
+
+// Gets the geolocation of user in coordinates
+function getLocation() {
+ 	if (navigator.geolocation) {
+		navigator.geolocation.getCurrentPosition(showPosition); 
+	} 
+	else {
+		window.alert("Geolocation is not supported in this browser.");
+	} 
+}
+
+// For testing that geolocation works
+function showPosition(position) {
+	window.location.href = "location.php?lat=" + position.coords.latitude + "&lon=" + position.coords.longitude;
+}
+
+
+// For debugging purposes
+function showError(error) { 
+	window.alert(error);
+}
+
+// Validates that the 'password' field matches the 'confirm password' field on the registration page
 function validate () {
-	
 	var validated = true;
-	
 	if (checkPassword()) {
 		document.forms["registration"]["cpsw"].setCustomValidity("Passwords must match.");
 		document.forms["registration"]["cpsw"].style.backgroundColor = "#ff9999";
 		document.forms["registration"]["cpsw"].focus();
 		validated = false;
 	}
-	
 	return validated;
 }
 
+// Function to compare the 'password' field and the 'confirm password' field
 function checkPassword() {
 	var p = document.forms["registration"]["psw"].value;
 	var p2 = document.forms["registration"]["cpsw"].value;
@@ -38,33 +51,14 @@ function checkPassword() {
 	}
 }
 
-
+// Function to hide error
 function hideError() {
 	document.forms["registration"]["cpsw"].style.backgroundColor = "white";
 }
 
-function getLocation() {
- 	if (navigator.geolocation) {
-		navigator.geolocation.getCurrentPosition(showPosition); 
-	} 
-	else {
-		window.alert("Geolocation is not supported in this browser.");
-	} 
-}
 
 
-function showPosition(position) {
-	window.location.href = "location.php?lat=" + position.coords.latitude + "&lon=" + position.coords.longitude;
-}
-
-function showError(error) { 
-	window.alert(error);
-}
-
-
-
-
-/* Functions related to resizable screens (incomplete)
+/* Functions related to resizable screens for mobile devices (scrpped after reading that we don't have to implement mobile screens)
 
 function showMenu() {
 	//window.alert("working");

@@ -1,5 +1,5 @@
-<!--  Authors: Lok Sum Lo (n9050159), Thiline Widanagamage (n9185691) -->
-<!--  CAB230 Wec Computing Assignment, April 2016 -->
+<!--  Authors: Lok Sum Lo (n9050159) -->
+<!--  CAB230 Wec Computing Assignment, May 2016 -->
 
 
 <!DOCTYPE html>
@@ -14,7 +14,7 @@
 
 	<body>
 	
-	<!-- search by SUBURB (drop down list), NAME (text box), RATING, or LOCATION -->
+	<!-- Displays the search park form and validation errors -->
 	
 		<div class="container">
 			<?php include 'menu.inc' ?>
